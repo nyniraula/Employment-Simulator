@@ -30,7 +30,7 @@ const departments = [
     telemetry: '[ METRIC: CLOUT_INDEX ]'
   },
   {
-    title: 'Corp Emailizer',
+    title: 'Email Yapper',
     description: `Because one sentence isn't enough.`,
     icon: Mail,
     colors: {
