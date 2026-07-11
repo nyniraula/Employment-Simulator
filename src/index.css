@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Fredoka', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Gamified Colors */
+  --color-game-bg: #E8F4F8;
+  --color-game-surface: #FFFFFF;
+  --color-game-text: #1E293B;
+
+  --color-level-pink: #FF8FAD;
+  --color-level-pink-shadow: #D86082;
+  --color-level-mint: #4ADE80;
+  --color-level-mint-shadow: #22C55E;
+  --color-level-blue: #60A5FA;
+  --color-level-blue-shadow: #3B82F6;
+  --color-level-purple: #C084FC;
+  --color-level-purple-shadow: #A855F7;
+  --color-level-yellow: #FCD34D;
+  --color-level-yellow-shadow: #F59E0B;
+
+  --color-brutalist-bg: #121212;
+  --color-brutalist-text: #EAEAEA;
+  --color-brutalist-accent: #FF2A2A;
+}
+
+@layer base {
+  :root {
+    --background: #E8F4F8;
+    --foreground: #1E293B;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Base utility for 3D buttons (Emil Design + Fisher-Price vibe) */
+@layer utilities {
+  .btn-3d {
+    @apply transition-transform ease-out duration-150 active:scale-95;
+  }
+}
