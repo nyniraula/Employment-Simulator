@@ -86,12 +86,12 @@ export default function ExcuseFactory() {
 
         {/* Center Title */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center w-full max-w-[60%] pointer-events-none">
-          <h1 className="text-base md:text-lg font-bold tracking-tight text-slate-900 leading-tight">Excuse Factory</h1>
+          <h1 className="text-base md:text-lg font-bold tracking-tight text-slate-900 leading-tight">Excuse Generator</h1>
         </div>
 
         <div className="flex items-center gap-2 text-amber-500">
           <Factory className="w-4 h-4 md:w-5 md:h-5" />
-          <span className="font-bold tracking-widest uppercase text-xs md:text-sm hidden sm:inline">Excuse Factory™</span>
+          <span className="font-bold tracking-widest uppercase text-xs md:text-sm hidden sm:inline">Excuse Generator™</span>
         </div>
       </header>
 

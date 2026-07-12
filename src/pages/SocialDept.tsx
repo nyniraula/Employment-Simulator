@@ -128,7 +128,7 @@ export default function SocialDept() {
         </button>
         
         <div className="flex items-center gap-4">
-          <h1 className="font-black tracking-tight text-xl">Social Dept.</h1>
+          <h1 className="font-black tracking-tight text-xl">Linkedin Boaster</h1>
           <div className="hidden sm:flex font-mono text-[10px] bg-red-500/10 text-red-600 px-3 py-1 rounded-sm border border-red-500/20 font-bold tracking-widest uppercase">
             [ METRIC: CLOUT_INDEX ]
           </div>

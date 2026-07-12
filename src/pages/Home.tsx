@@ -154,7 +154,7 @@ export default function Home() {
               key={dept.title}
               onClick={() => {
                 if (dept.title === 'Linkedin Boaster') navigate('/social');
-                else if (dept.title === 'Corp Emailizer') navigate('/emailizer');
+                else if (dept.title === 'Email Yapper') navigate('/emailizer');
                 else if (dept.title === 'Excuse Generator') navigate('/excuse');
               }}
               initial={{ opacity: 0, scale: 0.8, y: 60 }}

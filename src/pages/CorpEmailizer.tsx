@@ -103,7 +103,7 @@ export default function CorpEmailizer() {
         </button>
         
         <div className="flex items-center gap-4">
-          <h1 className="font-black tracking-tight text-xl">Corp Emailizer</h1>
+          <h1 className="font-black tracking-tight text-xl">Email Yapper</h1>
           <div className="hidden sm:flex font-mono text-[10px] bg-blue-500/10 text-blue-600 px-3 py-1 rounded-sm border border-blue-500/20 font-bold tracking-widest uppercase">
             [ METRIC: JARGON_DENSITY ]
           </div>
