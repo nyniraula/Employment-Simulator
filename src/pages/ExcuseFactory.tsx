@@ -66,11 +66,12 @@ export default function ExcuseFactory() {
     <div className="min-h-[100dvh] flex flex-col bg-[#FBFBFA] text-slate-800 font-sans relative overflow-hidden">
 
       {/* Background ambient motion */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex items-center justify-center">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 hidden sm:flex items-center justify-center">
         <motion.div
           animate={{ scale: [1, 1.05, 1], rotate: [0, -5, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="w-[800px] h-[800px] bg-amber-500/5 rounded-full blur-[100px]"
+          style={{ willChange: 'transform' }}
         />
       </div>
 
@@ -108,7 +109,7 @@ export default function ExcuseFactory() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 flex flex-col gap-8"
+              className="bg-white rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 shadow-sm border border-slate-100 flex flex-col gap-6 sm:gap-8"
             >
 
               {/* 1. Recipient */}
@@ -142,16 +143,16 @@ export default function ExcuseFactory() {
               {/* 3. Severity */}
               <div className="flex flex-col gap-3">
                 <label className="font-bold text-slate-800 tracking-wide">3. How bad is this?</label>
-                <div className="flex bg-slate-100 rounded-xl p-1.5 gap-1.5">
+                <div className="flex flex-col sm:flex-row bg-transparent sm:bg-slate-100 rounded-xl p-0 sm:p-1.5 gap-2 sm:gap-1.5">
                   {SEVERITIES.map(s => {
                     const isSelected = severity === s.id;
                     return (
                       <button
                         key={s.id}
                         onClick={() => setSeverity(s.id)}
-                        className={`flex-1 py-3 px-2 rounded-lg font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 ${isSelected
-                          ? 'bg-white shadow-sm text-slate-900 ring-1 ring-slate-200/50'
-                          : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'
+                        className={`flex-1 py-3 px-3 rounded-xl sm:rounded-lg font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 ${isSelected
+                          ? 'bg-white shadow-sm text-slate-900 ring-1 ring-slate-200 border border-slate-200/50 sm:border-none'
+                          : 'bg-slate-50 sm:bg-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-200/50 border border-slate-100 sm:border-transparent'
                           }`}
                       >
                         <span className="text-lg">{s.emoji}</span>
@@ -168,9 +169,9 @@ export default function ExcuseFactory() {
                 whileTap={{ scale: 0.98 }}
                 onClick={handleManufacture}
                 disabled={!reality.trim()}
-                className="w-full bg-amber-500 hover:bg-amber-600 text-white rounded-2xl py-4 md:py-5 font-bold tracking-wide text-lg md:text-xl shadow-md shadow-amber-500/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all mt-4 flex items-center justify-center gap-3"
+                className="w-full bg-amber-500 hover:bg-amber-600 text-white rounded-xl sm:rounded-2xl py-3.5 sm:py-5 font-bold tracking-wide text-base sm:text-xl shadow-md shadow-amber-500/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all mt-2 sm:mt-4 flex items-center justify-center gap-2 sm:gap-3"
               >
-                <Factory className="w-6 h-6" />
+                <Factory className="w-5 h-5 sm:w-6 sm:h-6" />
                 Manufacture Excuse
               </motion.button>
 
@@ -183,7 +184,7 @@ export default function ExcuseFactory() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
-                  className="bg-white rounded-[2rem] p-12 shadow-sm border border-slate-100 flex flex-col items-center justify-center min-h-[400px] gap-8"
+                  className="bg-white rounded-3xl sm:rounded-[2rem] p-8 sm:p-12 shadow-sm border border-slate-100 flex flex-col items-center justify-center min-h-[300px] sm:min-h-[400px] gap-6 sm:gap-8"
                 >
                   <div className="relative">
                     <div className="w-16 h-16 border-4 border-amber-100 border-t-amber-500 rounded-full animate-spin" />
@@ -203,7 +204,7 @@ export default function ExcuseFactory() {
                   key="output"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-slate-100 flex flex-col gap-6"
+                  className="bg-white rounded-3xl sm:rounded-[2rem] p-6 sm:p-10 shadow-sm border border-slate-100 flex flex-col gap-5 sm:gap-6"
                 >
                   <div className="flex items-center gap-3 text-amber-600 border-b border-slate-100 pb-6">
                     <div className="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center shrink-0">

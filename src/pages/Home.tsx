@@ -26,8 +26,7 @@ const departments = [
       bg: 'bg-[#FF8FAD]',
       shadow: 'border-[#D86082]',
       text: 'text-white'
-    },
-    telemetry: '[ METRIC: CLOUT_INDEX ]'
+    }
   },
   {
     title: 'Email Yapper',
@@ -37,8 +36,7 @@ const departments = [
       bg: 'bg-[#60A5FA]',
       shadow: 'border-[#3B82F6]',
       text: 'text-white'
-    },
-    telemetry: '[ METRIC: JARGON_DENSITY ]'
+    }
   },
   {
     title: 'Excuse Generator',
@@ -48,8 +46,7 @@ const departments = [
       bg: 'bg-[#C084FC]',
       shadow: 'border-[#A855F7]',
       text: 'text-white'
-    },
-    telemetry: '[ METRIC: BLAME_DEFLECTION ]'
+    }
   }
 ];
 
@@ -73,6 +70,7 @@ const ConveyorBeltRow = ({ reverse = false, speed = 40, delay = 0, yOffset = 0 }
       animate={{ x: reverse ? ['-50%', '0%'] : ['0%', '-50%'] }}
       transition={{ duration: speed, repeat: Infinity, ease: "linear", delay }}
       className="flex gap-16 md:gap-32 min-w-max"
+      style={{ willChange: 'transform' }}
     >
       {BELT_ITEMS.map((item, idx) => (
         <div key={idx} className={`w-24 h-24 md:w-32 md:h-32 rounded-3xl ${item.bg} border-4 ${item.border} border-b-8 flex items-center justify-center opacity-30 shadow-sm`}>
@@ -88,7 +86,7 @@ const AnimatedBackground = () => (
     <ConveyorBeltRow yOffset={10} speed={45} reverse={false} />
     <ConveyorBeltRow yOffset={45} speed={35} reverse={true} delay={2} />
     <ConveyorBeltRow yOffset={80} speed={50} reverse={false} delay={5} />
-    <div className="absolute inset-0 backdrop-blur-[2px] bg-white/10" />
+    <div className="absolute inset-0 sm:backdrop-blur-[2px] bg-white/60 sm:bg-white/10" />
   </div>
 );
 
@@ -129,18 +127,17 @@ export default function Home() {
 
           {/* Warning Box Subtitle */}
           <motion.div
-            whileHover={{ scale: 1.05, rotate: -1, transition: FAST_SPRING }}
-            whileTap={{ scale: 0.95, rotate: 0, transition: FAST_SPRING }}
-            className="bg-[#FCD34D] border-4 border-[#F59E0B] border-b-8 rounded-[24px] p-6 md:p-8 max-w-2xl mx-auto flex flex-col sm:flex-row gap-5 items-start text-left shadow-xl shadow-amber-500/10 cursor-pointer"
+            whileHover={{ scale: 1.02, rotate: -1, transition: FAST_SPRING }}
+            className="bg-[#FCD34D] border-2 border-b-4 sm:border-4 sm:border-b-8 border-[#F59E0B] rounded-2xl sm:rounded-[24px] p-4 sm:p-6 md:p-8 max-w-2xl mx-auto flex flex-row gap-3 sm:gap-5 items-center sm:items-start text-left shadow-lg sm:shadow-xl shadow-amber-500/10"
           >
             <motion.div
               whileHover={{ rotate: 15, scale: 1.2 }}
               transition={FAST_SPRING}
-              className="bg-amber-100 p-3 rounded-2xl shrink-0 border-2 border-amber-500 shadow-inner"
+              className="bg-amber-100 p-2 sm:p-3 rounded-xl sm:rounded-2xl shrink-0 border-2 border-amber-500 shadow-inner"
             >
-              <ShieldAlert className="w-8 h-8 text-[#B45309]" strokeWidth={2.5} />
+              <ShieldAlert className="w-6 h-6 sm:w-8 sm:h-8 text-[#B45309]" strokeWidth={2.5} />
             </motion.div>
-            <p className="font-mono text-[#B45309] text-sm md:text-base font-bold leading-relaxed uppercase tracking-tight">
+            <p className="font-mono text-[#B45309] text-[10px] sm:text-sm md:text-base font-bold leading-snug sm:leading-relaxed uppercase tracking-tight">
               WARNING: THESE TOOLS WILL NOT INCREASE PRODUCTIVITY.<br className="hidden sm:block" />
               THEY WILL ONLY MAKE YOU LOOK INCREDIBLY BUSY.
             </p>
@@ -178,11 +175,6 @@ export default function Home() {
                 >
                   <dept.icon className="w-8 h-8 md:w-10 md:h-10 text-white" strokeWidth={2.5} />
                 </motion.div>
-
-                {/* Brutalist Touch inside Bubble UI */}
-                <div className="font-mono text-[10px] sm:text-xs bg-black/20 px-3 py-1.5 rounded-full border border-black/10 text-white font-bold tracking-wider">
-                  {dept.telemetry}
-                </div>
               </div>
 
               {/* Content */}

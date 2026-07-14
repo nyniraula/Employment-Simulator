@@ -243,8 +243,6 @@ I just wanted to reach out regarding...
 
 Thanks for your understanding.
 
-Best,
-[Your Name]
 
 ## OUTPUT RULES
 
